@@ -223,3 +223,11 @@ tags
 [._]*.un~
 
 # End of https://www.toptal.com/developers/gitignore/api/django,python,vim
+/.idea/.gitignore
+/incomeExpenseDRFApi/authentication/migrations/0001_initial.py
+/.idea/DjangoDrf.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
