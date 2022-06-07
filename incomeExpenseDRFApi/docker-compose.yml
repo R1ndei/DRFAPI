@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   app:
-    container_name: expenseApp
+    container_name: expenseDRFAPI
     build:
       context: .
     ports:
@@ -14,14 +14,14 @@ services:
              python3 manage.py wait_for_db &&
              python3 manage.py runserver 0.0.0.0:8000"
     env_file:
-      - ./expensewebsite/.env
+      - ./incomeExpenseDRFApi/.env
     depends_on:
       - db
 
   db:
     image: postgres:14-alpine
     env_file:
-      - ./expensewebsite/.env
+      - ./incomeExpenseDRFApi/.env
     volumes:
       - pgdata:/var/lib/postgresql/data
   redis:
@@ -30,11 +30,11 @@ services:
     restart: always
     build:
       context: .
-    command: celery -A expensewebsite worker -l info
+    command: celery -A incomeExpenseDRFApi worker -l info
     volumes:
       - .:/app
     env_file:
-      - ./expensewebsite/.env
+      - ./incomeExpenseDRFApi/.env
     depends_on:
       - db
       - redis
