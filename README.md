@@ -1,31 +1,38 @@
-## VIDEO HOSTING API
+## DRFAPI
 
-This is a REST API for a Video hosting service built for fun and learning with FastAPI, Ormar and Sqlite3.
+This is a REST API for a Expense_income service built for fun and learning with FastAPI, Ormar and Sqlite3.
 
 
 ## ROUTES TO IMPLEMENT
 
 | METHOD   | ROUTE                         | FUNCTIONALITY            | ACCESS       |
 |----------|-------------------------------|--------------------------|--------------|
-| *GET*    | ```/```                       | _Google auth_            | _All users_  |
-| *POST*   | ```/google/auth```            | _Google auth_            | _All users_  |
-| *POST*   | ```/video```                  | _Create video_           | _Auth users_ |
-| *GET*    | ```/video/user/{user_name}``` | _Get List Video_         | _Auth users_ |
-| *GET*    | ```/video/index/{video_pk}``` | _Get Video_              | _Auth users_ |
-| *GET*    | ```/video/video/{video_pk}``` | _Get Streaming Video_    | _Auth users_ |
-| *GET*    | ```/video/404```              | _Error 404_              | _All users_  |
-| *POST*   | ```/video/{video_pk}```       | _Add like_               | _Auth users_ |
-| *GET*    | ```/followers/```             | _My list Following_      | _Auth users_ |
-| *POST*   | ```/followers/```             | _Add Follower_           | _Auth users_ |
-| *DELETE* | ```/followers/{username}```   | _Delete Follower_        | _Auth users_ |
-| *GET*    | ```/followers/me```           | _My List Follower_       | _Auth users_ |
+| *GET*    | ```/auth/email-verify/```     | _auth_email-verify_list_ | _All users_  |
+| *POST*   | ```/auth/login/```            | _auth_login_create_      | _All users_  |
+| *PATCH*  | ```/auth/password-reset-complete/```| _password-reset-complete_| _All users_ |
+| *GET*    | ```/auth/password-reset/{uidb64}/{token}/```| _auth_password-reset_read_| _All users_ |
+| *POST*   | ```/auth/register/```         | _auth_register_create_   | _All users_  |
+| *POST*   | ```/auth/request-reset-email/``` | _auth_request-reset-email_create_    | _All users_ |
+| *POST*   | ```/auth/token/refresh/```    | _token_refresh_          | _Auth users_ |
+| *GET*    | ```/expenses/```              | _expenses_list_          | _Auth users_ |
+| *POST*   | ```/expenses/```              | _expenses_create_        | _Auth users_ |
+| *GET*    | ```/expenses/{id}```          | _expenses_read_          | _Auth users_ |
+| *PUT*    | ```/expenses/{id}```          | _expenses_update_        | _Auth users_ |
+| *PATH*   | ```/expenses/{id}```          | _expenses_partial_update_| _Auth users_ |
+| *DELETE* | ```/expenses/{id}```          | _expenses_delete_        | _Auth users_ |
+| *GET*    | ```/income/```                | _income_list_            | _Auth users_ |
+| *POST*   | ```/income/```                | _income_create_          | _Auth users_ |
+| *GET*    | ```/income/{id}```            | _income_read_            | _Auth users_ |
+| *PUT*    | ```/income/{id}```            | _income_update_          | _Auth users_ |
+| *PATH*   | ```/income/{id}```            | _income_partial_update_  | _Auth users_ |
+| *DELETE* | ```/income/{id}```            | _income_delete_          | _Auth users_ |
+| *GET*    | ```/usersstats/expense_category_data```| _usersstats_expense_| _Auth users_ |
+| *GET*    | ```/usersstats/income_category_data``` | _usersstats_income_ | _Auth users_ |
 
 ## How to run the Project
 
 - Install Python
-- Git clone the project with ``` git clone https://github.com/R1ndei/video_hosting.git```
+- Git clone the project with ``` git clone https://github.com/R1ndei/DRFAPI.git```
 - Create your virtualenv with `Pipenv` or `virtualenv` and activate it.
 - Install the requirements with ``` pip install -r requirements.txt ```
-- Create you database with `uvicorn main:app`
-- Finally run the API
-  ``` uvicorn main:app ```
+- Create your docker container docker-compose up --build`
