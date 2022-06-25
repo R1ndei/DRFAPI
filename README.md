@@ -1,6 +1,6 @@
 ## DRFAPI
 
-This is a REST API for a Expense_income service built for fun and learning with FastAPI, Ormar and Sqlite3.
+This is a REST API for a Expense_income service built for fun and learning with DRF, PostgreSQL, Docker.
 
 
 ## ROUTES TO IMPLEMENT
